@@ -1,0 +1,511 @@
+/* SEO Portfolio Website - Custom CSS */
+
+/* ===== CSS Variables ===== */
+:root {
+    --primary-green: #4CAF50;
+    --secondary-green: #45a049;
+    --accent-orange: #FF9800;
+    --accent-beige: #F5F5DC;
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-lighter: #ffffff;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    --shadow-md: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    --shadow-lg: 0 1rem 3rem rgba(0,0,0,0.175);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* ===== Navbar Styles ===== */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-green) !important;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary-green) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-green) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    border: none;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    background: linear-gradient(135deg, var(--accent-beige) 0%, var(--bg-lighter) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(76,175,80,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(76,175,80,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(76,175,80,0.1)"/><circle cx="10" cy="50" r="0.5" fill="rgba(76,175,80,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--primary-green);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+.hero-section h1 {
+    color: var(--text-dark);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-section .btn {
+    animation: fadeInUp 1s ease 0.4s both;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== Professional Banner Section ===== */
+.professional-graphic img {
+    transition: transform 0.3s ease;
+}
+
+.professional-graphic img:hover {
+    transform: scale(1.02);
+}
+
+.profile-card {
+    border-left: 4px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-card img {
+    border: 3px solid var(--accent-orange);
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+}
+
+/* ===== Tools Section ===== */
+.workflow-images img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.workflow-images img:hover {
+    transform: scale(1.05);
+}
+
+.tools-list {
+    border-left: 4px solid var(--accent-orange);
+}
+
+.tools-list ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.tools-list ul li:hover {
+    padding-left: 1rem;
+    background: rgba(76,175,80,0.1);
+}
+
+.tools-list ul li:last-child {
+    border-bottom: none;
+}
+
+/* ===== Service Cards ===== */
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76,175,80,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-icon i {
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon i {
+    color: var(--accent-orange) !important;
+}
+
+/* ===== Why Choose Section ===== */
+.benefit-item {
+    padding: 1rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    border-left-color: var(--primary-green);
+    background: rgba(76,175,80,0.05);
+    padding-left: 1.5rem;
+}
+
+.illustration img {
+    transition: transform 0.3s ease;
+}
+
+.illustration img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Newsletter Section ===== */
+.newsletter-form .form-control {
+    border: 2px solid transparent;
+    background: white;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form .form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(76,175,80,0.25);
+}
+
+.newsletter-form .btn {
+    background: var(--primary-green);
+    border: none;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form .btn:hover {
+    background: var(--secondary-green);
+    transform: translateY(-2px);
+}
+
+/* ===== Testimonial Section ===== */
+.testimonial-quote {
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--primary-green);
+    position: absolute;
+    top: -2rem;
+    left: -3rem;
+    opacity: 0.3;
+}
+
+/* ===== Contact Section ===== */
+.map-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.map-container iframe {
+    border: none;
+}
+
+.contact-form {
+    border-top: 4px solid var(--primary-green);
+}
+
+.contact-form .form-control {
+    border: 2px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(76,175,80,0.25);
+}
+
+.contact-item {
+    padding: 0.75rem 0;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    padding-left: 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-green) !important;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+    }
+    
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-quote::before {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-image img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .workflow-images img {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-green);
+}
+
+/* ===== Loading Animation ===== */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Success/Error Messages ===== */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c3e6cb;
+    margin-top: 1rem;
+    display: none;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #f5c6cb;
+    margin-top: 1rem;
+    display: none;
+}
